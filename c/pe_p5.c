@@ -23,8 +23,8 @@ int calc(void){
     int num = 20;
     int found;
 
-	while(1){
-	    found = 1;
+    while(1){
+        found = 1;
         for (int i = 1; i <= 20; i++){
             if (num % i != 0){
                 found = 0;
@@ -35,7 +35,7 @@ int calc(void){
             break;
         }
         num++;
-	}
+    }
     return num;
 }
 
