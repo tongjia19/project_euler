@@ -13,7 +13,6 @@ case "$1" in
     c)
         file_ext="c"
         language_name="C"
-        compiler="gcc"
         ;;
 
     *)
@@ -29,7 +28,15 @@ cd $1
 function compile {
     printf "${prob_file}:  "
     printf "compiling.. "
-    ${compiler} pe_p${prob_num}.${file_ext} -o pe_p${prob_num}.bin
+    case "$language_name" in
+        C)
+            gcc pe_p${prob_num}.${file_ext} -o pe_p${prob_num}.bin
+            ;;
+
+        *)
+            echo -e "\"$$language_name\" not found!"
+            exit 1
+    esac
 }
 
 function execute {
