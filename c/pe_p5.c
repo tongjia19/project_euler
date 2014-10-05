@@ -13,13 +13,10 @@ Pass
 
 *******************
 
-
-
 *******************
 */
 
 #include <stdio.h>
-#include <string.h>
 
 int calc(void){
 

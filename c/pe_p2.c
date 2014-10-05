@@ -23,32 +23,32 @@ For recursive, return to function call.
 
 int calc(int _num, int num, int sum){
 
-	int num_;
+    int num_;
 
-	if (num % 2 == 0){
-		sum += num;
-	}
-	
-	num_ = _num + num;
+    if (num % 2 == 0){
+        sum += num;
+    }
 
-	if (num_ < 4000000){
-		return calc(num, num_, sum);
-	}	
-	else{
-		return sum;
-	}
+    num_ = _num + num;
+
+    if (num_ < 4000000){
+        return calc(num, num_, sum);
+    }
+    else{
+        return sum;
+    }
 }
 
 int main(void){
 
-        int _num = 1;
-        int num = 2;
-        int sum = 0;
+    int _num = 1;
+    int num = 2;
+    int sum = 0;
 
-        sum = calc(_num, num, sum);
+    sum = calc(_num, num, sum);
 
-        printf("%d",sum);
+    printf("%d",sum);
 
-        return 0;
+    return 0;
 }
 

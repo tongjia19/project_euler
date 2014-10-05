@@ -21,30 +21,30 @@ For large numbers, use long or long long.
 
 int calc(long long num){
 
-	int i = 2;
-	
-	do{
-		if (num%i == 0){
-			return calc(num/i);
-			break;
-		}
-		else{
-			i++;
-		}
-	}while(i < num/2);
-	
-	return num;
+    int i = 2;
+
+    do{
+        if (num%i == 0){
+            return calc(num/i);
+            break;
+        }
+        else{
+            i++;
+        }
+    }while(i < num/2);
+
+    return num;
 }
 
 int main(void){
 
-        int i;
-        long long num = 600851475143;
+    int i;
+    long long num = 600851475143;
 
-        i = calc(num);
+    i = calc(num);
 
-        printf("%i", i);
+    printf("%i", i);
 
-        return 0;
+    return 0;
 }
 

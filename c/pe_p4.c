@@ -25,31 +25,30 @@ Have to understand case that 933*933 < 932*999, and so have to replace result wi
 #include <string.h>
 
 int calc(void){
-
-	int num = 999;
+    int num = 999;
     int result;
     int largest_result = 0;
     char num_char[]="999999";
     int found;
 
-	for(int i = 999; i >= num; i--){
-	    found = 1;
+    for(int i = 999; i >= num; i--){
+        found = 1;
 
-		result = num*i;
-		sprintf(num_char, "%d", result);
+        result = num*i;
+        sprintf(num_char, "%d", result);
 
-	    for (int j = 0; j < 3; j++){
-	        if (num_char[j] != num_char[5-j]){
-	            found = 0;
-	            break;
-	        }
-	    }
+        for (int j = 0; j < 3; j++){
+            if (num_char[j] != num_char[5-j]){
+                found = 0;
+                break;
+            }
+        }
 
-	    if (found){
+        if (found){
             if (result > largest_result){
                 largest_result = result;
             }
-	    }
+        }
 
         if (i == num){
             num -= 1;
@@ -58,9 +57,8 @@ int calc(void){
             }
             i = 1000;
         }
-	}
-
-	return largest_result;
+    }
+    return largest_result;
 }
 
 

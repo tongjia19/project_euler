@@ -19,46 +19,44 @@ Make sure to not add the numbers that are both multiples of 3 and 5 twice. i.e.,
 #include <stdio.h>
 
 int calc1(int num1, int bound){
-	
-	int i = 1;
-	int sum = 0;
-	do{
-		
-		sum += i*num1;
-		i++;
 
-	}while(i*num1<bound);
-	
-	return sum;
+    int i = 1;
+    int sum = 0;
+    do{
+
+        sum += i*num1;
+        i++;
+
+    }while(i*num1<bound);
+
+    return sum;
 }
 
 int calc2(int num1, int num2, int bound){
-	
-	int i = 1;
-	int sum = 0;
-	do{
-		
-		if (i*num1 % num2 != 0){
-			sum += i*num1;
-		}
-		i++;
 
-	}while(i*num1<bound);
-	
-	return sum;
+    int i = 1;
+    int sum = 0;
+    do{
+        if (i*num1 % num2 != 0){
+            sum += i*num1;
+        }
+        i++;
+    }while(i*num1<bound);
+
+    return sum;
 }
 
 int main(void){
 
-        int num1 = 3;
-        int num2 = 5;
-        int bound = 1000;
-        int sum;
+    int num1 = 3;
+    int num2 = 5;
+    int bound = 1000;
+    int sum;
 
-        sum = calc1(num1, bound) + calc2(num2, num1, bound);
+    sum = calc1(num1, bound) + calc2(num2, num1, bound);
 
-        printf("%d", sum);
+    printf("%d", sum);
 
-        return 0;
+    return 0;
 }
 
