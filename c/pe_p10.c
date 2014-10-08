@@ -19,10 +19,13 @@ Pass
       at compile time. Values are only put on the heap with malloc, new, etc.
 
 - divide by prime nums to find prime num
+
+- divider should be less than square root of number of interest
 *******************
 */
 
 #include <stdio.h>
+#include <math.h>
 
 // this one is really slow.. and it's produces a slightly off answer.. hmm
 /*
@@ -76,6 +79,9 @@ long long calc(void){
         for (long long index = 0; index < 2000000; index++){
             diver = prime_nums[index];
             if (diver == 0){
+                break;
+            }
+            if (diver > sqrt(num)){
                 break;
             }
             if (num % diver == 0){
