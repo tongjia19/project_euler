@@ -87,7 +87,7 @@ long long calc(void){
             int current_num = num[j] - '0';
             product = product * current_num;
         }
-        printf("%d\n", product);
+        //printf("%d\n", product);
         if (product > largest_product){
             largest_product = product;
         }
