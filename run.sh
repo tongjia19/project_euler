@@ -37,6 +37,7 @@ function to_full_prod_num {
         3)
             ;;
         *)
+            echo "Bad problem number!"
             exit 1
     esac
 }
