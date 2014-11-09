@@ -8,7 +8,7 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 
 *******************
-
+Pass
 
 *******************
 
@@ -24,10 +24,7 @@ def calc(a, b, limit):
 
     return sum
 
-
 def main():
     print calc(3, 5, 1000)
 
-
-if __name__ == '__main__':
-    main()
+if __name__ == '__main__': main()
