@@ -14,7 +14,10 @@ case "$1" in
         file_ext="c"
         language_name="C"
         ;;
-
+    python)
+        file_ext="py"
+        language_name="Python"
+        ;;
     *)
         echo -e "\"$1\" not found!"
         exit 1
@@ -44,12 +47,13 @@ function to_full_prod_num {
 
 function compile {
     printf "${prob_file}:  "
-    printf "compiling.. "
     case "$language_name" in
         C)
             gcc pe_p${prob_num}.${file_ext} -o pe_p${prob_num}.bin
             ;;
-
+        Python)
+            python pe_p${prob_num}.${file_ext}
+            ;;
         *)
             echo -e "\"$$language_name\" not found!"
             exit 1
@@ -57,15 +61,18 @@ function compile {
 }
 
 function execute {
-    printf "executing:  "
-    ./pe_p${prob_num}.bin
+    if [ "$language_name" = "C" ]; then
+        ./pe_p${prob_num}.bin
+    fi
 
     echo -e ""
     echo -e "-------------------------\n"
 }
 
 function clean {
-    rm *.bin
+    if [ "$language_name" = "C" ]; then
+        rm *.bin
+    fi
 }
 
 if [ "$2" = "all" ]; then
